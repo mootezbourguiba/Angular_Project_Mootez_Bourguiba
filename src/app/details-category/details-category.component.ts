@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { Categorie } from '../models/categorie';
-import { CategoryFilterPipe } from '../pipes/category-filter.pipe';
-import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, CategoryFilterPipe, HighlightDirective],
-  selector: 'app-list-categories',
-  templateUrl: './list-categories.component.html',
-  styleUrls: ['./list-categories.component.css']
+  imports: [CommonModule],
+  selector: 'app-details-category',
+  templateUrl: './details-category.component.html',
+  styleUrls: ['./details-category.component.css']
 })
-export class ListCategoriesComponent {
+export class DetailsCategoryComponent implements OnInit {
+  categoryId!: number;
+  category: Categorie | undefined;
+
   categories: Categorie[] = [
     { id: 1, title: 'Grand électroménager', image: 'assets/images/categorie_electromenager.jpg', description: 'Description 1', available: true },
     { id: 2, title: 'Petit électroménager', image: 'assets/images/categorie_petit_electromenager.jpg', description: 'Description 2', available: true },
@@ -23,7 +23,10 @@ export class ListCategoriesComponent {
     { id: 6, title: 'Produits voiture', image: 'assets/images/produits_nettoyages.jpg', description: 'Description 6', available: false }
   ];
 
-  showDescription(description: string) {
-    alert(description);
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.categoryId = this.route.parent?.snapshot.params['id'];
+    this.category = this.categories.find(cat => cat.id == this.categoryId);
   }
 }

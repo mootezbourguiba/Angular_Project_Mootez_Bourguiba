@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  isAdmin: boolean = false; // Changez cette valeur pour tester
+  isAdmin: boolean = true; // Changez cette valeur pour tester
 }
