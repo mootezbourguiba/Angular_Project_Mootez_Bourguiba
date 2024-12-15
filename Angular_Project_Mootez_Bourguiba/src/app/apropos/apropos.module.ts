@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AproposComponent } from './apropos.component';
+import { AproposRoutingModule } from './apropos-routing.module'; // Correction ici
+import { AproposComponent } from './apropos/apropos.component'; // Correction ici
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AproposComponent
+  ],
   imports: [
     CommonModule,
-    AproposComponent
+    AproposRoutingModule // Correction ici
   ]
 })
-export class AproposModule { }
+export class AproposModule { } // Correction ici

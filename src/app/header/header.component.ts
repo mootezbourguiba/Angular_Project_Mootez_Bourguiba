@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, RouterModule]
 })
 export class HeaderComponent {
-  isAdmin: boolean = false; // Ajoutez cette ligne pour définir la propriété isAdmin
+  isAdmin = true;  // Initialisez la propriété isAdmin avec une valeur par défaut
 }

@@ -1,4 +1,3 @@
-// src/app/models/product.ts
 export class Product {
   id: number;
   name: string;
@@ -10,14 +9,14 @@ export class Product {
   promotion: number;
 
   constructor(
-    id: number,
-    name: string,
-    image: string,
-    categoryId: number,
-    description: string,
-    price: number,
-    brand: string,
-    promotion: number
+    id: number = 0,
+    name: string = '',
+    image: string = '',
+    categoryId: number = 0,
+    description: string = '',
+    price: number = 0,
+    brand: string = '',
+    promotion: number = 0
   ) {
     this.id = id;
     this.name = name;

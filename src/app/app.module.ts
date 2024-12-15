@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { AppRoutingModule } from './app-routing.module';  // Assurez-vous que AppRoutingModule est importé
+import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { ServerComponent } from './server/server.component';
+
+export const routes: Routes = [
+  { path: 'server', component: ServerComponent }
+];
 
 @NgModule({
+  declarations: [
+    ServerComponent
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    RouterModule
+    CommonModule,
+    RouterModule.forRoot(routes)
   ],
-  declarations: [
-    // Vous ne déclarez pas AppComponent ici car il est standalone
-  ],
-  providers: []
+  providers: [],
+  bootstrap: []
 })
 export class AppModule { }

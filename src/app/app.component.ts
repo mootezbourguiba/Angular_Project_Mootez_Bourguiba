@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './header/header.component'; // Importez HeaderComponent
-import { FooterComponent } from './footer/footer.component'; // Importez FooterComponent
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [RouterModule, HeaderComponent, FooterComponent] // Ajoutez les imports ici
+  imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+  title = 'Angular_Project_Mootez_Bourguiba';
+}

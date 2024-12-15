@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class HeaderComponent {
-  isAdmin: boolean = true; // Changez cette valeur pour tester
+  isAdmin: boolean = false; // Ajoutez cette ligne pour définir la propriété isAdmin
 }

@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Categorie } from '../models/categorie';
-import { CategoryFilterPipe } from '../pipes/category-filter.pipe';
-import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, CategoryFilterPipe, HighlightDirective],
+  imports: [CommonModule, FormsModule, RouterModule],
   selector: 'app-list-categories',
   templateUrl: './list-categories.component.html',
   styleUrls: ['./list-categories.component.css']

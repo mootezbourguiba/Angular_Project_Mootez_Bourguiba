@@ -1,26 +1,24 @@
-// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
-import { ProductsComponent } from './product/products/products.component';
-import { ProfileComponent } from './profile/profile/profile.component';
-import { ContactComponent } from './contact/contact/contact.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';  // Assurez-vous que AppRoutingModule est importé
 
 @NgModule({
-  declarations: [
-    ProductsComponent,
-    ProfileComponent,
-    ContactComponent,
-  ],
   imports: [
     BrowserModule,
-    CommonModule,
-    RouterModule,
     AppRoutingModule,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    RouterModule
   ],
-  providers: [],
-  bootstrap: []
+  declarations: [
+    // Vous ne déclarez pas AppComponent ici car il est standalone
+  ],
+  providers: []
 })
 export class AppModule { }
